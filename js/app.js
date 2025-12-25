@@ -4,7 +4,6 @@ function unlockApp() {
     document.getElementById("lockError").innerText = "Password required";
     return;
   }
-  // actual validation happens in backend
   document.getElementById("lockScreen").classList.add("hidden");
   document.getElementById("app").classList.remove("hidden");
 }
@@ -18,7 +17,7 @@ function toggleDateTime(cb) {
   document.getElementById("time").classList.toggle("hidden", !cb.checked);
 }
 
-const API_URL = "https://script.google.com/macros/s/AKfycbw5l1Rw7luDnTC4zyF6666bPiZQbllvKVbhqrJmc6FldcnlUFV-NcDdy2yZ-1PJC-Bklw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyAZbC3Z-DhA0FbKBbei0P_eMuZm-BV5ifgCAIdBK8doFb9oEKfTJJWKjjfvtX5lOXTNQ/exec";
 function loadDashboard() {
   fetch(API_URL + "?dashboard=true")
     .then(res => res.json())
