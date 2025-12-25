@@ -1,1 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXTGEN NAVIGATOR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark">
 
+<!-- 🔐 ENTRY SCREEN -->
+<div id="lockScreen" class="lock-screen">
+  <h1 class="logo">NEXTGEN<br><span>NAVIGATOR</span></h1>
+  <input type="password" id="sitePassword" placeholder="Enter Access Password">
+  <button onclick="unlockApp()">Authenticate</button>
+  <p id="lockError"></p>
+</div>
+
+<!-- 🧭 MAIN APP -->
+<div id="app" class="hidden">
+
+  <header>
+    <h2>NEXTGEN NAVIGATOR</h2>
+    <label class="toggle">
+      <input type="checkbox" onchange="toggleTheme()">
+      <span class="slider"></span>
+    </label>
+  </header>
+
+  <!-- 📊 DASHBOARD -->
+  <section class="cards">
+    <div class="card">
+      <p>This Month</p>
+      <h3 id="monthTotal">₹ --</h3>
+    </div>
+    <div class="card">
+      <p>Total Till Now</p>
+      <h3 id="allTotal">₹ --</h3>
+    </div>
+  </section>
+
+  <!-- ➕ TRANSACTION FORM -->
+  <section class="form">
+    <h3>Add Transaction</h3>
+
+    <input type="number" id="amount" placeholder="Amount">
+
+    <select id="type">
+      <option value="Expense">Expense</option>
+      <option value="Income">Income</option>
+    </select>
+
+    <select id="account"></select>
+    <select id="category"></select>
+
+    <input type="text" id="sentTo" placeholder="Sent To (optional)">
+    <input type="text" id="receivedFrom" placeholder="Received From (optional)">
+    <input type="text" id="reason" placeholder="Reason (optional)">
+
+    <label>
+      <input type="checkbox" onchange="toggleDateTime(this)">
+      Use custom date & time
+    </label>
+
+    <input type="date" id="date" class="hidden">
+    <input type="time" id="time" class="hidden">
+
+    <input type="file" id="proof">
+
+    <input type="password" id="submitPassword" placeholder="Submission Password">
+
+    <button onclick="submitTransaction()">Submit</button>
+    <p id="submitMsg"></p>
+  </section>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
