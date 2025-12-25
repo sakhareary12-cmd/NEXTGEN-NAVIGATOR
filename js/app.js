@@ -18,7 +18,7 @@ function toggleDateTime(cb) {
   document.getElementById("time").classList.toggle("hidden", !cb.checked);
 }
 
-const API_URL = "https://script.google.com/macros/s/AKfycbw5l1Rw7luDnTC4zyF6666bPiZQbllvKVbhqrJmc6FldcnlUFV-NcDdy2yZ-1PJC-Bklw/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbylvADovUGYyHfB1qdkD2ioQYczwCqjJPgz7EjnnucK/dev";
 function loadDashboard() {
   fetch(API_URL + "?dashboard=true")
     .then(res => res.json())
